@@ -1,0 +1,22 @@
+{
+  "name": "form-web-components",
+  "version": "0.0.1",
+  "description": "This project create webcomponents for using form and custom fields to make an ajax request to a given endpoint",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cavilarts/form-web-components.git"
+  },
+  "keywords": [
+    "webcomponents"
+  ],
+  "author": "Carlos Avila",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cavilarts/form-web-components/issues"
+  },
+  "homepage": "https://github.com/cavilarts/form-web-components#readme"
+}
