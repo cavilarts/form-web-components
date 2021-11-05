@@ -6,15 +6,17 @@
     <title>Real Digital WebComponents</title>
   </head>
   <body>
-    <real-digital-textfield
-      name="name"
-      validation="[a-z]+"
-    ></real-digital-textfield>
-    <real-digital-textfield
-      name="phone"
-      validation="[0-9]+"
-    ></real-digital-textfield>
-    <real-digital-textfield name="subject"></real-digital-textfield>
-    <real-digital-button>Send</real-digital-button>
+    <real-digital-form action="https://httpbin.org/post" method="POST">
+      <real-digital-textfield
+        name="name"
+        validation="[a-z]+"
+      ></real-digital-textfield>
+      <real-digital-textfield
+        name="phone"
+        validation="[0-9]+"
+      ></real-digital-textfield>
+      <real-digital-textfield name="subject"></real-digital-textfield>
+      <real-digital-button>Send</real-digital-button>
+    </real-digital-form>
   </body>
 </html>

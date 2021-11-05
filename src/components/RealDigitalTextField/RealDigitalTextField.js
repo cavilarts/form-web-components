@@ -18,7 +18,7 @@ class RealDigitalTextField extends HTMLElement {
   }
 
   render() {
-    return (this.shadow.innerHTML = `<input name=${this.name} type="text" />`);
+    return (this.shadow.innerHTML = `<input class="real-digital-textfield" name=${this.name} type="text" />`);
   }
 }
 
