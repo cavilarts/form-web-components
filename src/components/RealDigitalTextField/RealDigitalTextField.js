@@ -65,6 +65,12 @@ class RealDigitalTextField extends HTMLElement {
     this.setupListener();
   }
 
+  disconnectedCallback() {
+    const field = this.shadowRoot.querySelector("input");
+
+    field.removeEventListener("change");
+  }
+
   render() {
     return (this.shadow.innerHTML = `<div>
     <input class="real-digital-textfield" name=${this.name} type="text" value="${this.value}" />
