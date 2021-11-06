@@ -18,7 +18,6 @@ class RealDigitalForm extends HTMLElement {
   }
 
   submitForm(body) {
-    debugger;
     fetch(this.action, {
       headers: {
         "Content-Type": "application/json",
