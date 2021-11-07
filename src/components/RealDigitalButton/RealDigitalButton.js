@@ -7,6 +7,17 @@ class RealDigitalButton extends HTMLElement {
 
   connectedCallback() {
     this.render();
+
+    const button = this.shadowRoot.querySelector("button");
+
+    button.addEventListener("click", () => {
+      this.dispatchEvent(
+        new CustomEvent("onSubmit", {
+          bubbles: true,
+          cancelable: false,
+        })
+      );
+    });
   }
 
   render() {
