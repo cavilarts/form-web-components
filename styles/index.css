@@ -1,0 +1,82 @@
+* {
+  font-family: 'Source Sans Pro', sans-serif;
+  box-sizing: border-box;
+}
+
+.header-component {
+  background-image: url(https://www.real-digital.de/wp-content/uploads/blue-pattern-1.svg);
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+}
+
+.header-component--title {
+  color: white;
+  font-size: 34px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.main-wrapper {
+  padding: 0 15px;
+  justify-content: center;
+}
+
+real-digital-form::part(form) {
+  background-color: #e9e9e9;
+  margin: 30px auto;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 600px;
+}
+
+real-digital-textfield::part(textfield) {
+  padding: 10px;
+  font-size: 20px;
+  box-sizing: border-box;
+  width: 100%;
+  border: none;
+}
+
+real-digital-textfield::part(error) {
+  border-bottom: 1px solid #d9534f;
+}
+
+real-digital-textfield::part(textwrapper) {
+  margin: 10px 0;
+  padding: 10px;
+}
+
+real-digital-textfield::part(wrappererror) {
+  background-color: rgba(255, 223, 224, 0.25);
+  border-top: 1px solid #d9534f;
+  border-bottom: 1px solid #d9534f;
+}
+
+real-digital-textfield::part(errorlabel) {
+  margin: 5px 0 0;
+  color: #790000;
+  font-weight: 700;
+  letter-spacing: normal;
+  padding: 0;
+}
+
+real-digital-button::part(button) {
+  background-color: #ba0c2f;
+  border-radius: 5px;
+  font-size: 17px;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  text-transform: uppercase;
+  line-height: 17px;
+  transition: all .2s ease-in;
+}
+
+real-digital-button::part(button):hover {
+  background-color: #F56682;
+}

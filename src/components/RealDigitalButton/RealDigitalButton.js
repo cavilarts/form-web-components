@@ -20,9 +20,10 @@ class RealDigitalButton extends HTMLElement {
     });
   }
 
+
   render() {
     return (this.shadow.innerHTML = `
-      <button>
+      <button part="button">
         <slot></slot>
       </button>
     `);

@@ -8,7 +8,7 @@
     "build:dev": "webpack --mode=development",
     "build:prod": "webpack --mode=production --node-env=production",
     "watch": "webpack --watch",
-    "start": "webpack serve"
+    "start": "webpack serve --static styles"
   },
   "repository": {
     "type": "git",
@@ -24,12 +24,14 @@
   },
   "homepage": "https://github.com/cavilarts/form-web-components#readme",
   "devDependencies": {
-    "@webpack-cli/generators": "^2.4.1",
+    "@webpack-cli/generators": "^1.1.0",
+    "css-loader": "^6.5.1",
+    "html-webpack-plugin": "^5.3.2",
+    "prettier": "^2.4.1",
+    "style-loader": "^3.3.1",
     "webpack": "^5.61.0",
     "webpack-cli": "^4.9.1",
     "webpack-dev-server": "^4.3.1",
-    "html-webpack-plugin": "^5.3.2",
-    "workbox-webpack-plugin": "^6.3.0",
-    "prettier": "^2.4.1"
+    "workbox-webpack-plugin": "^6.3.0"
   }
 }

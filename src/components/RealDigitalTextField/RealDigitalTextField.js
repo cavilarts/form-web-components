@@ -25,6 +25,10 @@ class RealDigitalTextField extends HTMLElement {
     return this.getAttribute("name");
   }
 
+  get placeholder() {
+    return this.getAttribute("placeholder");
+  }
+
   get validation() {
     const validation = this.getAttribute("validation");
 
@@ -72,9 +76,9 @@ class RealDigitalTextField extends HTMLElement {
   }
 
   render() {
-    return (this.shadow.innerHTML = `<div>
-    <input class="real-digital-textfield" name=${this.name} type="text" value="${this.value}" />
-    <p>${this.error}</p>
+    return (this.shadow.innerHTML = `<div part="textwrapper ${this.error ? 'wrappererror' : ''}">
+    <input placeholder="${this.placeholder}" part="textfield ${this.error ? 'error' : ''}" name=${this.name} type="text" value="${this.value}" />
+    <p part="errorlabel">${this.error}</p>
     </div>`);
   }
 }
