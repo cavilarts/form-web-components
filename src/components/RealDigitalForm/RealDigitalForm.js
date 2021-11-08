@@ -55,7 +55,7 @@ class RealDigitalForm extends HTMLElement {
   }
 
   render() {
-    return (this.shadow.innerHTML = `<form action="${this.action}" method="${this.method}">
+    return (this.shadow.innerHTML = `<form part="form" action="${this.action}" method="${this.method}">
       <slot></slot>
     </form>`);
   }
