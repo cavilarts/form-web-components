@@ -3,17 +3,29 @@
   box-sizing: border-box;
 }
 
+:root {
+  --white: #FFF;
+  --black: #000;
+  --black-alpha: rgba(255, 223, 224, 0.25);
+  --gray: #e9e9e9;
+  --green: rgb(3, 121, 3);
+  --red: #d9534f;
+  --red-dark: #790000;
+  --red-vivo: #ba0c2f;
+  --pink: #F56682;
+}
+
 .header-component {
   background-image: url(https://www.real-digital.de/wp-content/uploads/blue-pattern-1.svg);
   min-height: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: black;
+  background-color: var(--black);
 }
 
 .header-component--title {
-  color: white;
+  color: var(--white);
   font-size: 34px;
   font-weight: 400;
   text-align: center;
@@ -25,7 +37,7 @@
 }
 
 real-digital-form::part(form) {
-  background-color: #e9e9e9;
+  background-color: var(--gray);
   margin: 30px auto;
   padding: 30px;
   display: flex;
@@ -33,6 +45,26 @@ real-digital-form::part(form) {
   align-items: center;
   max-width: 600px;
 }
+
+real-digital-form::part(response) {
+  margin: 0 auto;
+  padding: 4px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 600px;
+  height: 10px;
+  font-weight: 600;
+}
+
+real-digital-form::part(success) {
+  color: var(--green);
+}
+
+real-digital-form::part(error) {
+  color: var(--red);
+}
+
 
 real-digital-textfield::part(textfield) {
   padding: 10px;
@@ -43,7 +75,7 @@ real-digital-textfield::part(textfield) {
 }
 
 real-digital-textfield::part(error) {
-  border-bottom: 1px solid #d9534f;
+  border-bottom: 1px solid var(--red);
 }
 
 real-digital-textfield::part(textwrapper) {
@@ -52,21 +84,21 @@ real-digital-textfield::part(textwrapper) {
 }
 
 real-digital-textfield::part(wrappererror) {
-  background-color: rgba(255, 223, 224, 0.25);
-  border-top: 1px solid #d9534f;
-  border-bottom: 1px solid #d9534f;
+  background-color: var(--black-alpha);
+  border-top: 1px solid var(--red);
+  border-bottom: 1px solid var(--red);
 }
 
 real-digital-textfield::part(errorlabel) {
   margin: 5px 0 0;
-  color: #790000;
+  color: var(--red-dark);
   font-weight: 700;
   letter-spacing: normal;
   padding: 0;
 }
 
 real-digital-button::part(button) {
-  background-color: #ba0c2f;
+  background-color: var(--red-vivo);
   border-radius: 5px;
   font-size: 17px;
   color: white;
@@ -78,5 +110,5 @@ real-digital-button::part(button) {
 }
 
 real-digital-button::part(button):hover {
-  background-color: #F56682;
+  background-color: --pink;
 }

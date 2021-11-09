@@ -13,8 +13,12 @@ class RealDigitalForm extends HTMLElement {
     return this.getAttribute("method");
   }
 
-  validateForm() {
-    const fields = document.querySelector(".real-digital-textfield");
+  set response(val) {
+    return this._response = val;
+  }
+
+  get response() {
+    return this._response || "";
   }
 
   submitForm(body) {
@@ -24,7 +28,20 @@ class RealDigitalForm extends HTMLElement {
       },
       method: this.method,
       body: JSON.stringify(body),
-    });
+    })
+      .then(() => {
+        let fields = this.querySelectorAll("real-digital-textfield");
+  
+        [...fields].forEach((field) => (field.clearValue()));
+
+        this.response = "Your contact message was sent!";
+        this.render();
+      })
+      .catch(() => {
+        this.response = "Your message could not be sent. please try again";
+        this.render();
+      });
+    ;
   }
 
   validateAndSubmit(e) {
@@ -55,7 +72,9 @@ class RealDigitalForm extends HTMLElement {
   }
 
   render() {
-    return (this.shadow.innerHTML = `<form part="form" action="${this.action}" method="${this.method}">
+    return (this.shadow.innerHTML = `
+    <div part="response ${this.response ? 'success' : 'error'}"><p>${this.response}<p></div>
+    <form part="form" action="${this.action}" method="${this.method}">
       <slot></slot>
     </form>`);
   }

@@ -53,6 +53,11 @@ class RealDigitalTextField extends HTMLElement {
     return this.error;
   }
 
+  clearValue() {
+    this.value = '';
+    this.render();
+  }
+
   setupListener() {
     const field = this.shadowRoot.querySelector("input");
 
